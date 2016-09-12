@@ -10,8 +10,9 @@ RUN apk add --no-cache wget bash \
     && mkdir /opt \
     && wget -q -O - $MIRROR/zookeeper/zookeeper-$VERSION/zookeeper-$VERSION.tar.gz | tar -xzf - -C /opt \
     && mv /opt/zookeeper-$VERSION /opt/zookeeper \
-    && cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg \
     && mkdir -p /tmp/zookeeper
+
+ADD zoo.cfg /opt/zookeeper/conf/zoo.cfg
 
 EXPOSE 2181 2888 3888
 
