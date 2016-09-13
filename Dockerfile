@@ -18,7 +18,7 @@ EXPOSE 2181 2888 3888
 
 WORKDIR /opt/zookeeper
 
-VOLUME ["/opt/zookeeper/conf", "/tmp/zookeeper"]
+VOLUME ["/opt/zookeeper/conf", "/zookeeper"]
 
 ENTRYPOINT ["/opt/zookeeper/bin/zkServer.sh"]
 CMD ["start-foreground"]
